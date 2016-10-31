@@ -23,7 +23,7 @@
     <!-- Add your site or application content here -->
 
     <div flex>
-      <div ng-view=""></div>
+      <ui-view></ui-view>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -46,8 +46,8 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/materialize/bin/materialize.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <!-- endbower -->
@@ -55,7 +55,15 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="src/app.module.js"></script>
+        <script src="src/core/core.module.js"></script>
+        <script src="src/core/core.config.js"></script>
+        <script src="src/core/route/route.module.js"></script>
+        <script src="src/core/route/route.factory.js"></script>
+        <!--LAYOUT-->
         <script src="src/layout/layout.module.js"></script>
+        <script src="src/layout/layout.controller.js"></script>
+        <script src="src/layout/layout.route.js"></script>
+        <!--LAYOUT-->
         <script src="src/layout/main/main.js"></script>
         <script src="src/layout/about/about.js"></script>
         <!-- endbuild -->
