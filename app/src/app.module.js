@@ -1,14 +1,15 @@
-'use strict';
+(function () {
+  'use strict';
 
-/**
- * @ngdoc overview
- * @name danitaApp
- * @description
- * # danitaApp
- *
- * Main module of the application.
- */
-angular
+  /**
+   * @ngdoc overview
+   * @name danitaApp
+   * @description
+   * # danitaApp
+   *
+   * Main module of the application.
+   */
+  angular
   .module('danitaApp', [
     'ngAnimate',
     'ngAria',
@@ -21,7 +22,7 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'layout/main/main.html',
+        templateUrl: 'src/layout/main/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
@@ -34,3 +35,5 @@ angular
         redirectTo: '/'
       });
   });
+})();
+
