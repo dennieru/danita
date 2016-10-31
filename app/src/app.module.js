@@ -27,7 +27,7 @@
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'src/layout/main/main.html',
+        templateUrl: 'src/layout/layout.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
