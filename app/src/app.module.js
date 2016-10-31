@@ -11,13 +11,18 @@
    */
   angular
   .module('danitaApp', [
+    'danitaApp.layout'
+  ]);
+  angular
+  .module('danitaApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'pascalprecht.translate'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,7 +32,7 @@
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'layout/about/about.html',
+        templateUrl: 'src/layout/about/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
