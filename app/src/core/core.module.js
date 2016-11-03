@@ -1,43 +1,58 @@
+/**
+ * core.module.js
+ * @namespace danitaApp
+ * @ngdoc module
+ * @author Me
+ */
 (function () {
     'use strict';
+    
+    /**
+     * @memberof danitaApp
+     * @name danitaApp.core
+     * @desc Set core Module of application
+     */
+    angular.module('danitaApp.core', [
+        'ngAnimate',
+        'ngAria',
+        'ngCookies',
+        'ngMessages',
+        'ngResource',
+        'ngSanitize',
+        'ui.router',
+        'core.route',
+        'pascalprecht.translate'
+        ]).run(runCore);
 
-    angular.module('danitaApp.core', ['ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngSanitize',
-    'ui.router',
-    'core.route',
-    'pascalprecht.translate'])
-    .run(runCore);
-
-    runCore.$inject = ['$state', '$location','$rootScope'];
-
+    runCore.$inject = [
+        '$state', 
+        '$location',
+        '$rootScope'
+        ];
+    /* @ngInject */
+    
+    /**
+    * @name runCore
+    * @desc Core first configurations
+    * @param {NGService} $state state service
+    * @param {NGService} $location location service
+    * @param {NGService} $rootScope root scope service
+    */
     function runCore($state, $location, $rootScope) {
-
-
         $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
         $rootScope.$on('$stateChangeStart', stateChangeStart);
         $rootScope.$on('$stateChangeError', stateChangeError);
 
+        // fired once the state transition is complete.
         function stateChangeSuccess(event, toState, toParams, fromState, fromParams) {
         }
 
+        // fired when the transition begins.
         function stateChangeStart(event, toState) {
         }
-
-        // Route cancellation:
-        // On routing error, go to the dashboard.
-        // Provide an exit clause if it tries to do it twice.
+        
+        // fired when an error occurs during transition.
         function stateChangeError(event, toState, toParams, fromState, fromParams, error) {
         }
-
-        /**
-         * Close dialog and cancel event back browser button
-         */
-        $rootScope.$on('$locationChangeStart', function (event) {
-        });
-
     }
 })();

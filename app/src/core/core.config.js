@@ -1,25 +1,45 @@
+/**
+ * core.config.js
+ * @namespace danitaApp.core
+ * @ngdoc config
+ * @author Me
+ */
 (function () {
     'use strict';
-    var core = angular.module('danitaApp.core');
 
+    var core = angular.module('danitaApp.core');
     var config = {
         appTitle: 'Danita App',
         appVersion: '1.0'
     };
 
-    core.value('config', config);
     // Loading configurations. 
+    core.value('config', config);
     core.config(translationConfig);
     core.config(configure);
 
-    /*
-     * Core configurations.
-     */
-    configure.$inject = ['$stateProvider', '$urlRouterProvider',
-                         'routeFactoryConfigProvider', '$compileProvider'];
+    configure.$inject = [
+        '$stateProvider', 
+        '$urlRouterProvider',
+        'routeFactoryConfigProvider', 
+        '$compileProvider'
+        ];
+    /* @ngInject */
     
-    function configure($stateProvider, $urlRouterProvider,
-        routeFactoryConfigProvider, $compileProvider) {
+    /**
+    * @name configure
+    * @desc Core configurations
+    * @param {Provider} $stateProvider state service provider
+    * @param {Provider} $urlRouterProvider routing provider
+    * @param {Factory} routeFactoryConfigProvider route factory provider
+    * @param {Provider} $compileProvider compiler prvider
+    */
+    function configure(
+        $stateProvider, 
+        $urlRouterProvider,
+        routeFactoryConfigProvider, 
+        $compileProvider
+        ) {
 
         //This enable debugInfoEnabled to dev site to production this value will change by false by jenkins job
         $compileProvider.debugInfoEnabled(true);
@@ -30,11 +50,14 @@
         routeFactoryConfigProvider.config.docTitle = 'Danita App';
     }
 
-    /*
-     * Translate configuration 
-     */
     translationConfig.$inject = ['$translateProvider'];
+    /* @ngInject */
 
+    /**
+    * @name translationConfig
+    * @desc Translate configuration
+    * @param {Provider} $translateProvider translate service provider
+    */
     function translationConfig($translateProvider) {
         //To get warnings, regarding forgotten IDs in translations
         //$translateProvider.useMissingTranslationHandlerLog();

@@ -1,3 +1,9 @@
+/**
+ * app.module.js
+ * @namespace danitaApp
+ * @ngdoc module
+ * @author Me
+ */
 (function () {
   'use strict';
 

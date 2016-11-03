@@ -1,3 +1,9 @@
+/**
+ * route.factory.js
+ * @namespace core.route
+ * @ngdoc factory
+ * @author Me
+ */
 (function () {
     'use strict';
 
@@ -19,9 +25,25 @@
         };
     }
 
-    routeFactory.$inject = ['$location', '$rootScope', 'routeFactoryConfig'];
+    routeFactory.$inject = [
+        '$location', 
+        '$rootScope', 
+        'routeFactoryConfig'
+        ];
+    /* @ngInject */
 
-    function routeFactory($location, $rootScope, routeFactoryConfig) {
+    /**
+    * @name routeFactory
+    * @desc Routing factory
+    * @param {NgService} $location location service
+    * @param {NgService} $rootScope root scope
+    * @param {Service} routeFactoryConfig route factory service configuration
+    */
+    function routeFactory(
+        $location, 
+        $rootScope, 
+        routeFactoryConfig
+        ) {
         
         var $stateProvider = routeFactoryConfig.config.$stateProvider;
         var $urlRouterProvider = routeFactoryConfig.config.$urlRouterProvider;
