@@ -9,7 +9,7 @@
 
     core.value('config', config);
     // Loading configurations. 
-    //core.config(translationConfig);
+    core.config(translationConfig);
     core.config(configure);
 
     /*
@@ -32,7 +32,7 @@
 
     /*
      * Translate configuration 
-     *//*
+     */
     translationConfig.$inject = ['$translateProvider'];
 
     function translationConfig($translateProvider) {
@@ -58,5 +58,5 @@
         $translateProvider.useLocalStorage();
 
         $translateProvider.useSanitizeValueStrategy('escaped');
-    }*/
+    }
 })();
