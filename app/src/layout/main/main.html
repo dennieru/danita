@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="MainCtrl as vm">
   <div class="col s12 m6">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
@@ -12,4 +12,10 @@
       </div>
     </div>
   </div>
+  <ul class="collapsible" data-collapsible="accordion">
+      <li id="licollapse" ng-repeat="single in vm.awesomeThings">
+          <div class="collapsible-header">single</div>
+          <div class="collapsible-body"><p>single</p></div>
+      </li>
+  </ul> 
 </div>
