@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "strict": 1, //check "use strict" statement
+    "no-unused-vars": 2,
+    "curly": 1, // Require {} for every new block or scope.
+    "no-multi-spaces": 1,
+    "key-spacing": 1,
+    "no-return-assign": 1,
+    "consistent-return": 1,
+    "comma-dangle": 1,
+    "no-use-before-define": [2, "nofunc"],
+    "no-empty": 1,
+    "new-parens": 1,
+    "no-cond-assign": 1,
+    "quotes": [2, "single"],//string must use single quotes
+    "camelcase": 1,// Permit only camelcase for `var` and `object indexes`.
+    "new-cap": [1, { "capIsNew": false }],
+    "no-undef": 1,//when something is not defined
+    "eqeqeq": 1, //expected "===" and instead saw "=="
+    "max-len": [1, 120, 4], // Max line lenght 120
+    "eol-last": 1, //unexpected blank line at the end of file
+    "indent": 2, //indentation
+    "comma-spacing": [2, {"before": false, "after": true}], //space after comma
+    "space-unary-ops": [1, { "words": true, "nonwords": false}], // require or disallow spaces before/after unary operators
+    "space-in-parens": [2, "never"], //require or disallow spaces inside parentheses
+    "sort-vars": [2, { "ignoreCase": true }], //sort variables within the same declaration block
+    "space-infix-ops": [2, {"int32Hint": false}], //require spaces around operators
+    "space-before-blocks": [2, "always"], //equire or disallow a space before blocks
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true}], //enforce spacing between keys and values in object literal properties
+    "brace-style": 2
+  },
+  "globals": { // Globals variables.
+    "angular": false,
+        "jasmine": false,
+        "$": false,
+        "_": false,
+        "window": false,
+        "cordova": false,
+        "navigator": false,
+        "ionic": false,
+        "c3": false,
+        "d3": false,
+        "pdfMake": false,
+        "canvg": false,
+        "moment": false,
+        "$q": false
+  },
+  "env": {
+    "jasmine": true,
+    "node": true,
+    "browser": true
+  }
+}
