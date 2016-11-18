@@ -17,6 +17,7 @@
    */
   angular
   .module('danitaApp', [
+    'danitaApp.components',
     'danitaApp.core',
     'danitaApp.layout'
   ]);
