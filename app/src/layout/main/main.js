@@ -9,7 +9,15 @@
  */
 angular.module('danitaApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
+    var vm = this;
+
+    $(document).ready(function(){
+      $('.collapsible').collapsible({
+        accordion : false
+      });
+    });
+
+    vm.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'

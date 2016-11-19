@@ -15,6 +15,9 @@
         activate();
 
         function activate() {
+            $(document).ready(function(){
+                $(".button-collapse").sideNav();
+            });
         }
     }
 })();
