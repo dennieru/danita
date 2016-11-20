@@ -1,0 +1,51 @@
+<div class="row" ng-controller="MainCtrl as vm">
+    <div class="col s8">
+        <nav class="white" style="box-shadow: none;">
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label for="search"><i class="material-icons blue-grey-text">search</i></label>
+                    <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="cols-s4">
+        <ul class="right">
+            <li ng-show="vm.fullContainer">
+                <a href="#" class="blue-grey-text" ng-click="vm.activateFullContainer()">
+                    <i class="material-icons">fullscreen_exit</i>
+                </a>
+            </li>
+            <li ng-hide="vm.fullContainer">
+                <a href="#" class="blue-grey-text" ng-click="vm.activateFullContainer()">
+                    <i class="material-icons">fullscreen</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+  <div class="col s8">
+    <dnt-card data="Hello Ahoi"></dnt-card>
+    <dnt-card data="Hello Ahoi"></dnt-card>
+    <dnt-card data="Hello Ahoi"></dnt-card>
+    <dnt-card data="Hello Ahoi"></dnt-card>
+    <dnt-card data="Hello Ahoi"></dnt-card>
+  </div>
+  <div class="col s4">
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header active">Details</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+    </ul>
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li id="licollapse" ng-repeat="single in vm.awesomeThings">
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>single</div>
+            <div class="collapsible-body"><p>single</p></div>
+        </li>
+    </ul> 
+    </div>
+</div>
