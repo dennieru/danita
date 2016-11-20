@@ -1,10 +1,32 @@
-<div class="card blue-grey darken-1">
-    <div class="card-content white-text">
-        <span class="card-title">{{ $ctrl.data }}</span>
-        <p>{{ $ctrl.ago }}</p>
+<!--div class="card horizontal">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" style="width:110px" src="http://images.freeimages.com/images/premium/large-thumbs/5334/53345592-pet-dog-flat-icon-with-long-shadow-eps10.jpg">
     </div>
-    <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
+    <div class="card-stacked">
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+</div-->
+<div class="card horizontal">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" style="width:110px" src="http://images.freeimages.com/images/premium/large-thumbs/5334/53345592-pet-dog-flat-icon-with-long-shadow-eps10.jpg">
+    </div>
+    <div class="card-stacked">
+        <div class="card-content">
+            <span class="card-title grey-text text-darken-4">{{ $ctrl.data }}</span>
+            <p><a href="#">{{ $ctrl.ago }}</a></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
     </div>
 </div>
