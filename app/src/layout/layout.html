@@ -1,23 +1,62 @@
 <!-- NAVBAR -->
-<div id="dnt-menubar">
-  <nav class="nav-extended">
+<div class="navbar-fixed">
+  <nav class="nav-extended card blue-grey">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <!--a href="#" class="brand-logo">{{"dn.layout.main.title" | translate}}</a-->
+      <ul id="nav-mobile" class="left">
+        <li>
+          <a href="#" data-activates="mobile-demo" class="dnt-button-collapse"><i class="material-icons">menu</i></a>
+        </li>
+      </ul>
+      <ul id="nav-mobile" class="right">
+        <li>
+          <a href="sass.html"><img src="images/yuna.jpg" alt="User" width="20" height="20">
+          <span class=" hide-on-med-and-down">Jane Doe</span>
+          </a>
+        </li>
+        <li>
+          <a href="badges.html">
+            <i class="material-icons">lock</i>  
+          </a>
+        </li>
+        <li>
+          <a href="#modal">
+            <i class="material-icons">settings</i>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">{{"dn.layout.menu.tabs.records" | translate}}</a></li>
+        <li class="tab"><a class="active" href="#test2">{{"dn.layout.menu.tabs.pets" | translate}}</a></li>
+        <li class="tab disabled"><a href="#test3">{{"dn.layout.menu.tabs.owners" | translate}}</a></li>
+        <li class="tab"><a href="#test4">{{"dn.layout.menu.tabs.products" | translate}}</a></li>
+      </ul>
     </div>
   </nav>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">User</a></li>
-          <li><a href="badges.html">Settings</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
 </div>
 <!-- NAVBAR -->
+<span><br /></span>
+<span><br /></span>
+<span><br /></span>
+<!-- MAIN BUTTON -->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large teal">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating blue-grey darken-4"><i class="material-icons">insert_chart</i></a></li>
+    <li><a class="btn-floating blue-grey darken-3"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating blue-grey darken-2"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue-grey darken-1"><i class="material-icons">attach_file</i></a></li>
+  </ul>
+</div>
+<!-- MAIN BUTTON -->  
 <!-- SIDENAV-->
 <ul id="slide-out" class="side-nav">
   <li><div class="userView">
@@ -36,8 +75,8 @@
 </ul>
 <!-- SIDENAV-->
 <!-- CONTENT -->
-<div class="container">
-    <div data-ng-include="'src/layout/main/main.html'"></div>
+<div id="dnt-container" class="container">
+    <div data-ng-include="'src/pets/pets.html'"></div>
 </div>
 <!-- CONTENT -->
 <!-- FOOTER -->
@@ -47,3 +86,19 @@
   </div>
 </div>
 <!-- FOOTER-->
+<!-- MODAL -->
+<div id="modal" class="modal" ng-controller="LayoutCtrl as vm">
+  <div class="modal-content">
+    <h4>{{"dnt.settings.title" | translate}}</h4>
+    <!-- Switch -->
+    <div class="switch">
+      <label>
+        {{"dnt.language.es" | translate}}
+        <input type="checkbox" ng-model="vm.defaultLang" ng-change="vm.changeLanguage()">
+        <span class="lever"></span>
+        {{"dnt.language.en" | translate}}
+      </label>
+    </div>
+  </div>
+</div>
+<!-- MODAL -->

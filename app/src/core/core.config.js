@@ -67,14 +67,18 @@
             prefix: 'resources/locale-',
             suffix: '.json'
         });
-
-        var language = navigator.language;
+        
+        //var language = navigator.language;
+        var language = localStorage.getItem('language');
         if (language.substring(0, 2) === 'es') {
             language = 'es_ES';
+            localStorage.setItem('language', 'es_ES');
         } else if (language.substring(0, 2) === 'en') {
             language = 'en_US';
+            localStorage.setItem('language', 'en_US');
         } else {
-            language = 'en_US';
+            language = 'es_ES';
+            localStorage.setItem('language', 'es_ES');
         }
 
         $translateProvider.preferredLanguage(language);

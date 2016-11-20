@@ -1,3 +1,10 @@
 {
-    "dn.layout.main.title": "REACT2 - METEOR"
+    "dnt.language.es": "Spanish",
+    "dnt.language.en": "English",
+    "dnt.settings.title": "Settings",
+    "dn.layout.main.title": "Dannita Vet",
+    "dn.layout.menu.tabs.records": "Medical records",
+    "dn.layout.menu.tabs.pets": "Pets",
+    "dn.layout.menu.tabs.owners": "Owners",
+    "dn.layout.menu.tabs.products": "Products"
 }
