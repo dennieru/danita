@@ -8,19 +8,31 @@
  * Controller of the danitaApp
  */
 angular.module('danitaApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', MainCtrl);
+
+  MainCtrl.$inject = ['Restangular'];
+  
+  function MainCtrl(Restangular) {
     var vm = this;
 
     vm.fullContainer = false;
+    vm.pets = [];
     
     // Methods
     vm.activateFullContainer = activateFullContainer;
 
-    $(document).ready(function(){
-      $('.collapsible').collapsible({
-        accordion : false
+    activate();
+
+    function activate() {
+      $(document).ready(function(){
+        $('.collapsible').collapsible({
+          accordion : false
+        });
       });
-    });
+
+      var pets = Restangular.all('pets');
+      vm.pets = pets.getList().$object;
+    }
         
     function activateFullContainer(){
         vm.fullContainer = !vm.fullContainer;
@@ -35,4 +47,4 @@ angular.module('danitaApp')
       'AngularJS',
       'Karma'
     ];
-  });
+  };

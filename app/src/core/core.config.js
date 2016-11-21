@@ -15,8 +15,30 @@
 
     // Loading configurations. 
     core.value('config', config);
+    core.config(restConfig);
     core.config(translationConfig);
     core.config(configure);
+    
+
+    configure.$inject = ['RestangularProvider'];
+    /* @ngInject */
+
+    /**
+    * @name restConfig
+    * @desc Restangular configurations
+    * @param {Provider} RestangularProvider rest provider.
+    */
+    function restConfig(RestangularProvider) {
+        //set the base url for api calls on our RESTful services
+		var newBaseUrl = "";
+		if (window.location.hostname == "localhost") {
+			newBaseUrl = "http://localhost:8080/api";
+		} else {
+			var deployedAt = window.location.href.substring(0, window.location.href);
+			newBaseUrl = deployedAt + "/api";
+		}
+		RestangularProvider.setBaseUrl(newBaseUrl);
+    }
 
     configure.$inject = [
         '$stateProvider', 
@@ -25,7 +47,7 @@
         '$compileProvider'
         ];
     /* @ngInject */
-    
+
     /**
     * @name configure
     * @desc Core configurations
@@ -67,7 +89,7 @@
             prefix: 'resources/locale-',
             suffix: '.json'
         });
-        debugger
+        
         // var language = navigator.language;
         var language = '';
         // language = localStorage.getItem('language');

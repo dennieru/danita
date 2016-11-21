@@ -26,14 +26,8 @@
             </li>
         </ul>
     </div>
-<div ng-init="friends = [{name:'John', phone:'555-1276'},
-                         {name:'Mary', phone:'800-BIG-MARY'},
-                         {name:'Mike', phone:'555-4321'},
-                         {name:'Adam', phone:'555-5678'},
-                         {name:'Julie', phone:'555-8765'},
-                         {name:'Juliette', phone:'555-5678'}]"></div>
   <div class="col s8">
-    <dnt-card data="{{friend.name}}" ng-repeat="friend in friends | filter:searchText"></dnt-card>
+    <dnt-card data="{{pet}}" ng-repeat="pet in vm.pets | filter:searchText"></dnt-card>
   </div>
   <div class="col s4">
     <ul class="collapsible popout" data-collapsible="accordion">

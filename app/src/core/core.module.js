@@ -21,7 +21,8 @@
         'ngSanitize',
         'ui.router',
         'core.route',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'restangular'
         ]).run(runCore);
 
     runCore.$inject = [
