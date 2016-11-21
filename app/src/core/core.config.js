@@ -67,9 +67,16 @@
             prefix: 'resources/locale-',
             suffix: '.json'
         });
+        debugger
+        // var language = navigator.language;
+        var language = '';
+        // language = localStorage.getItem('language');
+        if(localStorage.getItem('language')){
+            language = localStorage.getItem('language');
+        } else{
+            language = 'es_ES';
+        }
         
-        //var language = navigator.language;
-        var language = localStorage.getItem('language');
         if (language.substring(0, 2) === 'es') {
             language = 'es_ES';
             localStorage.setItem('language', 'es_ES');
